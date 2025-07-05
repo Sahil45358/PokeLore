@@ -90,6 +90,19 @@
     topBtn.onclick = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
+    <script>
+  const searchBox = document.getElementById("searchBox");
+  const loreItems = document.querySelectorAll("#loreList li");
+
+  searchBox.addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    loreItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(query) ? "block" : "none";
+    });
+  });
+</script>
+
   </script>
 </body>
 </html>
