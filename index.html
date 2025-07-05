@@ -7,15 +7,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Pokémon Lore Archive</h1>
-    <p class="subtitle">Explore the hidden stories of the Pokémon world</p>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Pokémon Lore Archive</h1>
+      <p class="subtitle">Explore the hidden stories of the Pokémon world</p>
+      <input type="text" placeholder="Search for a Pokémon or legend..." class="search-box">
+    </div>
   </header>
 
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#blog">Lore Entries</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#submit">Submit Lore</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -39,6 +44,22 @@
       </article>
     </section>
 
+    <section id="testimonials">
+      <h2>Testimonials</h2>
+      <blockquote>"I never knew how deep the lore went until I found this site!" — TrainerX</blockquote>
+      <blockquote>"Finally a place for the forgotten Poké-legends!" — MythMaster99</blockquote>
+    </section>
+
+    <section id="submit">
+      <h2>Submit Your Lore</h2>
+      <form>
+        <label>Name:<br><input type="text" name="name" required></label><br><br>
+        <label>Email:<br><input type="email" name="email" required></label><br><br>
+        <label>Your Lore:<br><textarea name="lore" rows="6" required></textarea></label><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
     <section id="faq">
       <h2>FAQ</h2>
       <p><strong>Where do you source this lore?</strong> We gather content from official Pokémon games, anime, manga, and community-submitted fan theories.</p>
@@ -53,5 +74,17 @@
   <footer>
     <p>&copy; 2025 Pokémon Lore Archive. This is a fan site and not affiliated with Nintendo or Game Freak.</p>
   </footer>
+
+  <button id="topBtn" title="Back to top">↑</button>
+
+  <script>
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = () => {
+      topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
 </body>
 </html>
